@@ -2,10 +2,9 @@ import sys
 import re
 import gzip
 from tabulate import tabulate
-def readUniProt(input):
+def readUniProt(input,output):
     with gzip.open(input, 'r') as f: #abrimos fichero fasta, solo lectura
         i = 0
-        final = []
         resultado = {}
         nombre = ''
         pro = 1
@@ -13,14 +12,13 @@ def readUniProt(input):
 
         for line in f:
             line = line.decode()  # pasamos de line typo bit a tipo string
+            resultado[0]=["TaxID","Scientific Name (Common Name)","Num_Proteins"]
             if line[0:2] == 'OX':
                 repite = 0
                 line = line.split('{')
                 id = re.sub("\D","",line[0])
                 if id in resultado:
-                    pro = resultado[id][2]
-                    pro += 1
-                    resultado[id][2] = pro
+                    resultado[id][2] += pro
                 else:
                     resultado[id] = [id,nombre,pro]
 
@@ -32,6 +30,10 @@ def readUniProt(input):
                 else:
                     nombre = line[:-1]
                     repite = 1
+
         print(tabulate(resultado.values()))
 
-readUniProt(sys.argv[1])
+    with open(output, 'w') as w:
+        w.write(tabulate(resultado.values(),headers="firstrow"))
+
+readUniProt(sys.argv[1],sys.argv[2])
