@@ -14,13 +14,13 @@ def readUniProt(input,output):
             if line[0:2] == 'OX': # si la line entre la posicion 0 y 2 es igual a OX
                 repite = 0 # repite igual a 0
                 line = line.split('{') # separamos line cuando encuentre el caracter {
-                id = re.sub("\D","",line[0]) # id es igual a todos los numeros que esten en line antes del caracter {, es decir en line de la posicion 0 de line
+                id = re.sub("\D","",line[0]) # id es igual a todos los numeros que esten en line antes del caracter {, es decir en la posicion 0 de line
                 if id in resultado: # si id esta dentro de resultado
                     resultado[id][2] += pro # resultado en la posicion id, en la posicion 2 se suma pro(1)
                 else: # sino
                     resultado[id] = [id,nombre,pro] #resultado en la posicion id sera igual a posicion 0 id, posicion 1 nombre, posicion 2 pro
 
-            if line[0:2] == 'OS': # si line entre la posicion 0 y 2 es igual a OS
+            elif line[0:2] == 'OS': # si line entre la posicion 0 y 2 es igual a OS
                 line = line.replace("OS   ", "") # line es igual a line camiando 'OS   ' a ''
                 line = line.replace(".", "") # line es igual a line cambiando '.' ''
                 if repite == 1: # si repite es igual a 1
