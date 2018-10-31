@@ -1,6 +1,7 @@
 import sys
 import re
 import gzip
+
 def readUniProt(tax_id,input,output):
     with gzip.open(input, 'r') as f:  # abrimos fichero input, solo lectura
         repetidoOC = 0
@@ -48,4 +49,8 @@ def readUniProt(tax_id,input,output):
         with open(output, 'w') as w: # abrimos fichero output, solo escritura
             w.write(resultado) # escribimos en el fichero el contenido de resultado
 
-readUniProt(sys.argv[1],sys.argv[2],sys.argv[3])
+if (len(sys.argv)>4 or len(sys.argv)<4):#si el  numero de parametros es mayor o menor a 4
+    print('Numero de argumentos invalidos: python3 Proteinas_1Organismo_Fasta.py [id_taxonomico] [input.gz] [outout.txt]')
+else:#sino
+    readUniProt(sys.argv[1], sys.argv[2], sys.argv[3])
+    print('Programa ejecutado con exito')
