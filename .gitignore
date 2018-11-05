@@ -2,3 +2,4 @@
 venv/
 resultados.txt
 *.gz*
+outpu.txt

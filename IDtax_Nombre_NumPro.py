@@ -33,7 +33,7 @@ def readUniProt(input,output):
         w.write(tabulate(resultado.values(),headers="firstrow"))# escribimos en el fichero, en formato tabular, los valores de resultado y poniendo la primera fila como encabezado
 
 if (len(sys.argv)>3 or len(sys.argv)<3):#si el  numero de parametros es mayor o menor a 3
-    print('Numero de argumentos invalidos: python3 IDtax_Nombre_NumPro.py [input.gz] [outout.txt]')
+    print('Numero de argumentos invalidos: python3 IDtax_Nombre_NumPro.py [input.gz] [output.txt]')
 else:#sino
     readUniProt(sys.argv[1], sys.argv[2])
     print('Programa ejecutado con exito')
