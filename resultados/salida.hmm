@@ -1,0 +1,34 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+Pkinase              PF00069.24 Q4VSN5;              -            1.1e-39  124.1   0.0   4.1e-39  122.2   0.0   2.0   2   0   0   2   2   2   1 Protein kinase domain
+Pkinase              PF00069.24 Q5IS48;              -            1.1e-39  124.0   0.0   4.3e-39  122.1   0.0   1.9   2   0   0   2   2   2   1 Protein kinase domain
+Pkinase              PF00069.24 P0C0K6;              -            2.9e-50  158.7   0.0   4.2e-50  158.2   0.0   1.2   1   0   0   1   1   1   1 Protein kinase domain
+fn3                  PF00041.20 P0C0K6;              -            9.4e-38  116.3   6.1   4.5e-21   62.9   1.4   2.9   3   0   0   3   3   3   2 Fibronectin type III domain
+globins4             -          P01935;              -              7e-61  192.6   0.9   7.7e-61  192.4   0.9   1.0   1   0   0   1   1   1   1 -
+globins4             -          P06347;              -            5.3e-15   43.7   4.5   2.2e-11   31.9   4.3   2.3   1   1   1   2   2   2   1 -
+globins4             -          P69907-P01922;       -            1.3e-57  182.0   0.3   1.5e-57  181.8   0.3   1.0   1   0   0   1   1   1   1 -
+globins4             -          Q9UCP9;              -            1.5e-61  194.8   0.1   1.6e-61  194.6   0.1   1.0   1   0   0   1   1   1   1 -
+globins4             -          P61772-P02043;       -            3.9e-64  203.2   0.1   4.3e-64  203.0   0.1   1.0   1   0   0   1   1   1   1 -
+globins4             -          Q6LDH1;              -            1.8e-58  184.7   0.3     2e-58  184.6   0.3   1.0   1   0   0   1   1   1   1 -
+globins4             -          P61920-P02096;       -            6.1e-59  186.3   0.0   6.7e-59  186.2   0.0   1.0   1   0   0   1   1   1   1 -
+globins4             -          P61921-P02096;       -            5.1e-58  183.3   0.0   5.7e-58  183.1   0.0   1.0   1   0   0   1   1   1   1 -
+Pkinase              PF00069.24 Q2QLF1;              -            1.2e-43  137.0   0.0   2.2e-43  136.2   0.0   1.3   1   0   0   1   1   1   1 Protein kinase domain
+Pkinase              PF00069.24 Q9N272;              -              1e-74  238.9   0.0   1.3e-74  238.5   0.0   1.1   1   0   0   1   1   1   1 Protein kinase domain
+Pkinase              PF00069.24 Q95NE7;              -              9e-69  219.4   0.0   1.1e-68  219.2   0.0   1.1   1   0   0   1   1   1   1 Protein kinase domain
+globins4             -          P02145;              -            3.1e-62  197.0   1.7   3.4e-62  196.8   1.7   1.0   1   0   0   1   1   1   1 -
+fn3                  PF00041.20 Q5IS41;              -            2.2e-29   89.5   0.1   2.4e-16   47.7   0.0   3.4   2   0   0   2   2   2   2 Fibronectin type III domain
+globins4             -          Q3KN66;              -            2.5e-12   35.0   0.0     3e-12   34.8   0.0   1.0   1   0   0   1   1   1   1 -
+Pkinase              PF00069.24 Q5IS37;              -            1.4e-49  156.4   0.0   2.1e-49  155.9   0.0   1.2   1   0   0   1   1   1   1 Protein kinase domain
+Pkinase              PF00069.24 Q7YQL4;              -            1.1e-76  245.3   0.0   1.6e-76  244.8   0.0   1.2   1   0   0   1   1   1   1 Protein kinase domain
+Pkinase              PF00069.24 Q5IS58;              -            2.2e-05   11.6   0.0   3.6e-05   10.9   0.0   1.3   1   0   0   1   1   1   1 Protein kinase domain
+#
+# Program:         hmmscan
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SCAN
+# Query file:      ./resultados/resultados.fa
+# Target file:     ./database/minifam
+# Option settings: hmmscan --tblout ./resultados/salida.hmm ./database/minifam ./resultados/resultados.fa 
+# Current dir:     /home/pacuci/Desktop/projects/Dominios
+# Date:            Wed Nov  7 12:12:54 2018
+# [ok]
