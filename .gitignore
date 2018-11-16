@@ -1,5 +1,5 @@
 .idea/
 venv/
-resultados.txt
+resultados/
+database/
 *.gz*
-outpu.txt
