@@ -3,7 +3,7 @@ from tabulate import tabulate
 import sys
 def Ejercicio6(database,input,output,tabular):
     subprocess.check_output(["hmmscan",
-                     "--pfamtblout",
+                     "--pfamtblout",#domtblout
                      output, #Output
                      database,
                      input #Input
