@@ -1,10 +1,12 @@
 import sys
+from tabulate import tabulate
 import gzip
 
 def Ejercicio7(fasta,uniprot,tabular,output):
     id_tax={}
     id_proteina={}
-    resultado = {}  # declaramos resultado como diccinario
+    resultado = {}
+    # declaramos resultado como diccinario
     with open(fasta, 'r') as f:  # abrimos fichero input, solo lectura
         i=0
         resultado[0] = ["ID TAX", "ID PROTEINA", "ID DOMINIOS", "ID DOMINIOS UNIPROT", "ID DOMINIOS HMMER"]
@@ -13,9 +15,11 @@ def Ejercicio7(fasta,uniprot,tabular,output):
                 line = line.split(';')  # separamos line cuando encuentre el caracter {
                 id_tax[i]=line[2]
                 id_proteina[i]=line[1]
-                i+=1
-        print(id_tax)
-        print(id_proteina)
+                resultado[id_proteina[i]] = [id_tax[i], id_proteina[i], "-", "-", "-"]
+                i += 1
+
+    with open(output, 'w') as w:  # abrimos fichero output, solo escritura
+        w.write(tabulate(resultado.values(),headers="firstrow"))  # escribimos en el fichero, en formato tabular, los valores de resultado y poniendo la primera fila como encabezado
 
 
 if (len(sys.argv)>5 or len(sys.argv)<5):#si el  numero de parametros es mayor o menor a 3

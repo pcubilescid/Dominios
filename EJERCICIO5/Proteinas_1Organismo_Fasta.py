@@ -19,7 +19,7 @@ def readUniProt(tax_id,input,output):
                     resultado += cabecera + secuencia# resultado es += a la cabecera mas la secuencia
             elif line[0:2] == 'AC': # si la line entre la posicion 0 y 2 es igual a AC
                 line = line.replace("AC   ", "")  # line es igual a line camiando 'AC   ' por ''
-                line = line.replace(";", "|")  # line es igual a line cambiando ';' por '-'
+                line = line.replace(";", "|")  # line es igual a line cambiando ';' por '|'
                 line = line.replace(" ", "")  # line es igual a line cambiando ' ' por ''
                 ac_number = line[:-2] # ac_number es igual a line menos las 2 ultimas posiciones
             elif line[0:2] == 'ID': # si la line entre la posicion 0 y 2 es igual a ID
@@ -29,7 +29,7 @@ def readUniProt(tax_id,input,output):
             elif line[0:2] == 'OC': # si la line entre la posicion 0 y 2 es igual a OC
                 line = line.replace("OC   ", "")  # line es igual a line camiando 'OC   ' por ''
                 #line = line.replace(".", "")  # line es igual a line cambiando '.' por ''
-                line = line.replace(";", "|")  # line es igual a line cambiando ';' por '-'
+                line = line.replace(";", "|")  # line es igual a line cambiando ';' por '|'
                 line = line.strip()  # eliminacion saltos de lineas
                 line = line.replace(" ", "")  # line es igual a line cambiando ' ' por ''
                 if repetidoOC == 0: # si repetidoOC es igual a 0
