@@ -4,3 +4,5 @@ El programa toma como parametros el fichero FASTA de secuencias de proteina de u
 
 Este ultimo fichero tiene formato tabular: 
 La primera columna es el identificador taxonomico del organismo al que pertenece la proteina; la siguiente el identificador de la proteina; la siguiente los identificadores de los dominios que aparecen tanto en UniProt como en la busqueda con HMMer en Pfam, separados por comas (y si no hubiese, un guion); en la siguiente los identificadores de los dominios que solo aparecen en UniProt, separados por comas (y si no hubiese, un guion); y en la ultima los identificadores de los dominios que solo aparecen en la busqueda con HMMer en Pfam, separados por comas (y si no hubiese, un guion).
+
+Ejecución -> python3 _Ejercicio7.py [input.fa](fichero FASTA de secuencias de proteina)[input.gz](fichero comprimido de UniProt SW) [input.txt](fichero tabular) [output.txt](fichero donde grabar los resultados de las diferencias)

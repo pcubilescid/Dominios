@@ -3,20 +3,19 @@ from tabulate import tabulate
 import gzip
 
 def Ejercicio7(fasta,uniprot,tabular,output):
-    id_tax={}
-    id_proteina={}
-    resultado = {}
-    # declaramos resultado como diccinario
+    resultado = {} # declaramos resultado como diccinario
+
+    resultado[0] = ["ID TAX", "ID PROTEINA", "ID DOMINIOS", "ID DOMINIOS UNIPROT", "ID DOMINIOS HMMER"]
     with open(fasta, 'r') as f:  # abrimos fichero input, solo lectura
-        i=0
-        resultado[0] = ["ID TAX", "ID PROTEINA", "ID DOMINIOS", "ID DOMINIOS UNIPROT", "ID DOMINIOS HMMER"]
         for line in f:  # para line dentro de fichero
             if line[0] == '>':  # si la line entre la posicion 0 y 2 es igual a OX
-                line = line.split(';')  # separamos line cuando encuentre el caracter {
-                id_tax[i]=line[2]
-                id_proteina[i]=line[1]
-                resultado[id_proteina[i]] = [id_tax[i], id_proteina[i], "-", "-", "-"]
-                i += 1
+
+                line = line.split(';')  # separamos line cuando encuentre el caracter ;
+                id_tax=line[2]
+                id_proteina=line[1]
+                resultado[id_proteina] = [id_tax, id_proteina]
+
+
 
     with open(output, 'w') as w:  # abrimos fichero output, solo escritura
         w.write(tabulate(resultado.values(),headers="firstrow"))  # escribimos en el fichero, en formato tabular, los valores de resultado y poniendo la primera fila como encabezado
