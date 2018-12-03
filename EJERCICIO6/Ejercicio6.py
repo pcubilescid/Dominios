@@ -2,7 +2,7 @@ import subprocess
 from tabulate import tabulate
 import sys
 def Ejercicio6(database,input,output,tabular):
-    subprocess.check_output(["hmmscan", #orden hmm
+    subprocess.check_output(["hmmscan", #orden hmm no me lee la primera linea
                      "--domtblout", # formato guarfado output
                      output, #Output
                      database, #Database
@@ -10,13 +10,14 @@ def Ejercicio6(database,input,output,tabular):
                      ]
             )
 
-
     with open(output, 'r') as f:  # abrimos fichero output, solo lectura
         resultado = {} # declaramos resultado como diccinario
         cont=1 # declamaramos cont igual a 1
         for line in f :# para line dentro de fichero
             resultado[0]=["Accesion Number", "ID Dominio de Pfam", "Coordenada de inicio", "Coordenada de fin", "e-Value"] # resultado en la posicion 0 es igual
+            print (line)
             if line[0] is not "#": # si la line en la posicion 0 es diferente a #
+                line = line.split() # separamos line cuando encuentre un espacio
                 ac = line[3] # ac es igual a line posicion 3
                 ac = ac.split(";") # separamos ac cuando encuentre el caracter ;
                 id_pfam = line[1]  # id_pfam es igual a line posicion 1
