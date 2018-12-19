@@ -15,7 +15,6 @@ def Ejercicio6(database,input,output,tabular):
         cont=1 # declamaramos cont igual a 1
         for line in f :# para line dentro de fichero
             resultado[0]=["Accesion Number", "ID Dominio de Pfam", "Coordenada de inicio", "Coordenada de fin", "e-Value"] # resultado en la posicion 0 es igual
-            print (line)
             if line[0] is not "#": # si la line en la posicion 0 es diferente a #
                 line = line.split() # separamos line cuando encuentre un espacio
                 ac = line[3] # ac es igual a line posicion 3

@@ -16,41 +16,6 @@ def Ejercicio7(fasta,uniprot,tabular,output):
 
     resultado[0] = ["ID TAX", "ID PROTEINA", "ID DOMINIOS", "ID DOMINIOS UNIPROT", "ID DOMINIOS HMMER"]
 
-    with open(fasta, 'r') as f:  # abrimos fichero input, solo lectura
-        i = 1
-        for line in f:  # para line dentro de fichero
-            if line[0] == '>':  # si la line entre la posicion 0 y 2 es igual a OX
-                line = line.split(';')  # separamos line cuando encuentre el caracter ;
-                id_tax[i]=line[2] # id_tax[i] es igual a line en la posicion 2
-                id_proteina[i]=line[1] # id_proteina[i] es igual a line en la posicion 1
-                ac[i] = line[0][1:] # ac[i] es igual a line de la posicion 0 desde el caracter 1 hasta el final
-                i += 1
-
-    with open(tabular, 'r') as t: # abrimos fichero tabular solo lectura
-        repite = 0
-        i = 1
-        j = 1
-        for line2 in t: # para line2 dentro de fichero t
-            line2 = line2.split()  # separamos line cuando encuentre un espacio
-            dom = line2[1].split(".") # dom es igual a line2 en la posicion 1 separando por el caracter .
-            if line2[1][0] == "P": # si line2 en la posicion 1 el caracter 0 es igual a P
-                ac2[j] = line2[0] # ac2[j] es igual a line2 posicion 0
-                if ac2[j] == ac[i]: # si ac2[j] es igual a ac[i] (ac son accesion number)
-                    if dom[0] not in id_hmm[i]: # si dom en la posicion cero (hasta el caracter .) no esta en id_hmm[i]
-                        if repite == 1: # si repite es igual  a 1
-                            id_hmm[i] += "," + dom[0] # id_hmm[i] es mas igual a el caracter , mas dom[0] (concatetar los dominios)
-                        else:
-                            id_hmm[i] = dom[0] # id_hmm[i] es igual a dom[0]
-                            repite = 1
-                        j += 1 # añadimos 1 al contador j
-                else:
-                    repite = 0
-                    i += 1 # añadimos 1 al contador i
-                    if ac2[j] == ac[i]: # si ac2[j] es igual a ac[i] (ac son accesion number)
-                        id_hmm[i] = dom[0] # id_hmm[i] es igual a dom[0]
-                        repite = 1
-                        j += 1 # añadimos 1 al contador j
-
     with gzip.open(uniprot, 'r') as u:  # abrimos fichero input, solo lectura
         i = 1
         j = 1
@@ -81,6 +46,8 @@ def Ejercicio7(fasta,uniprot,tabular,output):
         for line in f:  # para line dentro de fichero
             if line[0] == '>':  # si la line entre la posicion 0 >
                 line = line.split(';')  # separamos line cuando encuentre el caracter ;
+                id_tax[j] = line[2]  # id_tax[i] es igual a line en la posicion 2
+                id_proteina[j] = line[1]  # id_proteina[i] es igual a line en la posicion 1
                 ac[j] = line[0][1:] # ac[i] es igual a line de la posicion 0 desde el caracter 1 hasta el final
                 while ac_number[i] != ac[j]: # si ac_number[i] es diferente a ac[j] (ac son accesion number)
                     i += 1
@@ -90,7 +57,32 @@ def Ejercicio7(fasta,uniprot,tabular,output):
                     except KeyError: # excepto Error de clave
                         pfam[i] = "-" # pfam[i] es igual al caracter -
                         id_uni[j] = pfam[i] # uni[j] es igual a pfam[i]
-                    j += 1
+                j += 1
+
+    with open(tabular, 'r') as t: # abrimos fichero tabular solo lectura
+        repite = 0
+        i = 1
+        j = 1
+        for line2 in t: # para line2 dentro de fichero t
+            line2 = line2.split()  # separamos line cuando encuentre un espacio
+            dom = line2[1].split(".") # dom es igual a line2 en la posicion 1 separando por el caracter .
+            if line2[1][0] == "P": # si line2 en la posicion 1 el caracter 0 es igual a P
+                ac2[j] = line2[0] # ac2[j] es igual a line2 posicion 0
+                if ac2[j] == ac[i]: # si ac2[j] es igual a ac[i] (ac son accesion number)
+                    if dom[0] not in id_hmm[i]: # si dom en la posicion cero (hasta el caracter .) no esta en id_hmm[i]
+                        if repite == 1: # si repite es igual  a 1
+                            id_hmm[i] += "," + dom[0] # id_hmm[i] es mas igual a el caracter , mas dom[0] (concatetar los dominios)
+                        else:
+                            id_hmm[i] = dom[0] # id_hmm[i] es igual a dom[0]
+                            repite = 1
+                        j += 1 # añadimos 1 al contador j
+                else:
+                    repite = 0
+                    i += 1 # añadimos 1 al contador i
+                    if ac2[j] == ac[i]: # si ac2[j] es igual a ac[i] (ac son accesion number)
+                        id_hmm[i] = dom[0] # id_hmm[i] es igual a dom[0]
+                        repite = 1
+                        j += 1 # añadimos 1 al contador j
 
     i = 1
     for x in id_proteina: # para x dentro de id_proteina
