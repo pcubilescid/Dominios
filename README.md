@@ -48,6 +48,8 @@ hmmpress (nombre de tu base de datos)
 - librerias especificas, en requirements.txt 
 
 
+docker run --rm -ti -u $UID -v /home/pacuci/Desktop/projects/Dominios:/app/data -v /home/pacuci/Desktop/projects/Dominios/DB:/database dominios5 python3 IDtax_Nombre_NumPro.py
+
 
 
 
