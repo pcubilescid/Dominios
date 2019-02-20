@@ -1,4 +1,4 @@
-Realizado y datos descargados 15/11/2018
+Realizado y datos descargados 20/02/2019
 
 Serie de programas que ayudan a comprobar, cuantos de los dominios Pfam mas relevantes encontrados en sus proteinas conocidas en UniProt SW coinciden con los dominios anotados.
 
@@ -24,32 +24,18 @@ https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=39432&lvl=
 
 Necesidades para el funcionamiento de los programas: 
 
-· Uniprot
-
-Ficheros comprimidos de Uniprot SwissProt
-ftp://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/taxonomic_divisions/
-
-para realizar estos problemas se ha descargado uniprot_sprot_mammals.dat.gz
-
-· Pfam
-
-Probado con la versión 32 de Pfam (ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam32.0/) para ser usado con hmmscan ( descargar el fichero Pfam-A.hmm.gz ), descomprimido e indexado con hmmpress.
-
-Recomendado crear una carpeta llamada database en la que guardar nuestra base de datos
-
-comandos una vez descargado y descomprimido:
-
-cat Pfam-A.hmm -> (nombre de tu base de datos)
-hmmpress (nombre de tu base de datos)
-
 · Python
 
 - Version 3 de python
 - librerias especificas, en requirements.txt 
 
 
-docker run --rm -ti -u $UID -v /home/pacuci/Desktop/projects/Dominios:/app/data -v /home/pacuci/Desktop/projects/Dominios/DB:/database dominios5 python3 IDtax_Nombre_NumPro.py
+· Docker
 
+- sudo apt-get install docker-ce
 
+Para correr los programas: 
+
+docker run --rm -ti -v /home/pacuci/Desktop/projects/Dominios:/app/data -v /home/pacuci/Desktop/projects/Dominios/DB:/database dominios5 python3 ... parametros segun que programa ejecutes
 
 
