@@ -36,6 +36,6 @@ Necesidades para el funcionamiento de los programas:
 
 Para correr los programas: 
 
-docker run --rm -ti -v (direccion projecto local):/app/data -v (direccion de la carpeta que se creara, una base de datos):/database dominios5 python3 ... parametros segun que programa ejecutes
+docker run --rm -ti -v (direccion projecto local):/app/data -v (direccion de la carpeta que se creara, una base de datos):/database (nombre del docker) python3 ... parametros segun que programa ejecutes
 
 
