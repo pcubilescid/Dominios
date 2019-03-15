@@ -1,0 +1,102 @@
+Mar-14 11:48:04.321 [main] DEBUG nextflow.cli.Launcher - $> nextflow run prueba.nf
+Mar-14 11:48:04.522 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.01.0
+Mar-14 11:48:04.532 [main] INFO  nextflow.cli.CmdRun - Launching `prueba.nf` [berserk_brenner] - revision: 06d306a9b5
+Mar-14 11:48:04.547 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/pacuci/Desktop/projects/Dominios/nextflow.config
+Mar-14 11:48:04.548 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/pacuci/Desktop/projects/Dominios/nextflow.config
+Mar-14 11:48:04.574 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Mar-14 11:48:05.097 [main] DEBUG nextflow.Session - Session uuid: cd4ffd4b-a596-45a7-94a2-71411cd13d2b
+Mar-14 11:48:05.097 [main] DEBUG nextflow.Session - Run name: berserk_brenner
+Mar-14 11:48:05.098 [main] DEBUG nextflow.Session - Executor pool size: 4
+Mar-14 11:48:05.107 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.01.0 build 5050
+  Modified: 22-01-2019 11:19 UTC (12:19 CEST)
+  System: Linux 4.15.0-43-generic
+  Runtime: Groovy 2.5.5 on Java HotSpot(TM) 64-Bit Server VM 1.8.0_201-b09
+  Encoding: UTF-8 (UTF-8)
+  Process: 18896@pacuci-HP-Laptop-15-bs0xx [127.0.1.1]
+  CPUs: 4 - Mem: 11.6 GB (2.8 GB) - Swap: 2 GB (2 GB)
+Mar-14 11:48:05.135 [main] DEBUG nextflow.Session - Work-dir: /home/pacuci/Desktop/projects/Dominios/work [ext2/ext3]
+Mar-14 11:48:05.136 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/pacuci/Desktop/projects/Dominios/bin
+Mar-14 11:48:05.446 [main] DEBUG nextflow.Session - Session start invoked
+Mar-14 11:48:05.457 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Mar-14 11:48:05.459 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Mar-14 11:48:05.741 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-14 11:48:05.792 [main] DEBUG nextflow.util.CacheHelper - Config settings `withName:cuatro` matches process cuatro
+Mar-14 11:48:05.794 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Mar-14 11:48:05.795 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Mar-14 11:48:05.800 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Mar-14 11:48:05.801 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Mar-14 11:48:05.804 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=11.6 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+Mar-14 11:48:05.807 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Mar-14 11:48:05.808 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Mar-14 11:48:05.809 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Mar-14 11:48:05.855 [main] DEBUG nextflow.Session - >>> barrier register (process: cuatro)
+Mar-14 11:48:05.858 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > cuatro -- maxForks: 4
+Mar-14 11:48:05.889 [main] DEBUG nextflow.util.CacheHelper - Config settings `withName:cinco` matches process cinco
+Mar-14 11:48:05.889 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Mar-14 11:48:05.890 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Mar-14 11:48:05.890 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Mar-14 11:48:05.891 [main] DEBUG nextflow.Session - >>> barrier register (process: cinco)
+Mar-14 11:48:05.891 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > cinco -- maxForks: 4
+Mar-14 11:48:05.899 [main] DEBUG nextflow.util.CacheHelper - Config settings `withName:seis` matches process seis
+Mar-14 11:48:05.899 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Mar-14 11:48:05.900 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Mar-14 11:48:05.900 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Mar-14 11:48:05.901 [main] DEBUG nextflow.Session - >>> barrier register (process: seis)
+Mar-14 11:48:05.901 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > seis -- maxForks: 4
+Mar-14 11:48:05.912 [main] DEBUG nextflow.util.CacheHelper - Config settings `withName:siete` matches process siete
+Mar-14 11:48:05.912 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Mar-14 11:48:05.912 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Mar-14 11:48:05.913 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Mar-14 11:48:05.914 [main] DEBUG nextflow.Session - >>> barrier register (process: siete)
+Mar-14 11:48:05.915 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > siete -- maxForks: 4
+Mar-14 11:48:05.926 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Mar-14 11:48:05.926 [main] DEBUG nextflow.Session - Session await
+Mar-14 11:48:05.988 [Actor Thread 11] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/pacuci/Desktop/projects/Dominios/resultados/seis.txt -- Cause: java.nio.file.NoSuchFileException: /home/pacuci/Desktop/projects/Dominios/resultados/seis.txt
+Mar-14 11:48:05.990 [Actor Thread 10] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/pacuci/Desktop/projects/Dominios/resultados/seis.hmm -- Cause: java.nio.file.NoSuchFileException: /home/pacuci/Desktop/projects/Dominios/resultados/seis.hmm
+Mar-14 11:48:05.992 [Actor Thread 10] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/pacuci/Desktop/projects/Dominios/resultados/seis.txt -- Cause: java.nio.file.NoSuchFileException: /home/pacuci/Desktop/projects/Dominios/resultados/seis.txt
+Mar-14 11:48:06.046 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-14 11:48:06.049 [Task submitter] INFO  nextflow.Session - [d7/8b418e] Submitted process > cinco
+Mar-14 11:48:06.066 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-14 11:48:06.071 [Task submitter] INFO  nextflow.Session - [60/b1fd1e] Submitted process > siete
+Mar-14 11:48:06.083 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-14 11:48:06.083 [Task submitter] INFO  nextflow.Session - [4e/fc467c] Submitted process > seis
+Mar-14 11:48:06.088 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-14 11:48:06.092 [Task submitter] INFO  nextflow.Session - [45/71223a] Submitted process > cuatro
+Mar-14 11:48:41.550 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: siete; status: COMPLETED; exit: 1; error: -; workDir: /home/pacuci/Desktop/projects/Dominios/work/60/b1fd1e3025a29c90376693d33f1959]
+Mar-14 11:48:41.585 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'siete'
+
+Caused by:
+  Process `siete` terminated with an error exit status (1)
+
+Command executed:
+
+  python3 Ejercicio7.py cinco.fa uniprot_sprot_mammals.dat.gz seis.txt /home/pacuci/Desktop/projects/Dominios/resultados/siete.txt
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  Traceback (most recent call last):
+    File "Ejercicio7.py", line 125, in <module>
+      Ejercicio7(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    File "Ejercicio7.py", line 64, in Ejercicio7
+      with open(tabular, 'r') as t: # abrimos fichero tabular solo lectura
+  FileNotFoundError: [Errno 2] No such file or directory: 'seis.txt'
+
+Work dir:
+  /home/pacuci/Desktop/projects/Dominios/work/60/b1fd1e3025a29c90376693d33f1959
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Mar-14 11:48:41.589 [Actor Thread 6] DEBUG nextflow.Session - <<< barrier arrive (process: siete)
+Mar-14 11:48:41.592 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `siete` terminated with an error exit status (1)
+Mar-14 11:48:41.616 [main] DEBUG nextflow.Session - Session await > all process finished
+Mar-14 11:48:41.616 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-14 11:48:41.616 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Mar-14 11:48:41.622 [main] WARN  n.processor.TaskPollingMonitor - Killing pending tasks (3)
+Mar-14 11:48:41.640 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=0; failedCount=4; ignoredCount=0; cachedCount=0; succeedDuration=0ms; failedDuration=35.4s; cachedDuration=0ms]
+Mar-14 11:48:41.689 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Mar-14 11:48:41.716 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
