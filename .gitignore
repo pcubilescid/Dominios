@@ -3,3 +3,4 @@ venv/
 resultados/
 database/
 *.gz*
+*.nextflow*
